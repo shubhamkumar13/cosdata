@@ -1,4 +1,3 @@
-use std::hash::{Hash, Hasher};
 // Define the lookup table size
 const U16_TABLE_SIZE: usize = u16::MAX as usize + 1;
 

@@ -1,4 +1,3 @@
-use rand::Rng;
 use std::arch::x86_64::*;
 
 fn print_mm256i(name: &str, value: __m256i) {

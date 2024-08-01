@@ -3,18 +3,12 @@ use actix_web::{
     dev::ServiceRequest, middleware, web, App, Error, HttpRequest, HttpResponse, HttpServer,
 };
 use actix_web_httpauth::{extractors::bearer::BearerAuth, middleware::HttpAuthentication};
-use dashmap::DashMap;
-use lmdb::Environment;
 use rustls::{pki_types::PrivateKeyDer, ServerConfig};
 use rustls_pemfile::{certs, pkcs8_private_keys};
 use serde::{Deserialize, Serialize};
-use std::fs::create_dir_all;
-use std::path::Path;
-use std::sync::Arc;
 use std::{fs::File, io::BufReader};
 
-use crate::models::types::*;
-use crate::{api, WaCustomError};
+use crate::api;
 use std::env;
 
 #[derive(Debug, Serialize, Deserialize)]

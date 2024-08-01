@@ -1,9 +1,6 @@
-use super::types::VectorId;
-use crate::models::user::{AddUserResp, AuthResp, Statistics, User};
-use rayon::iter::WhileSome;
+use crate::models::user::{AddUserResp, AuthResp, Statistics};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
-use std::sync::{Arc, Mutex};
 
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 

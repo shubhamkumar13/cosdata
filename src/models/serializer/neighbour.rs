@@ -3,13 +3,13 @@ use crate::models::types::FileOffset;
 use crate::models::{
     cache_loader::NodeRegistry,
     chunked_list::LazyItem,
-    types::{MergedNode, Neighbour},
+    types::Neighbour
 };
 use byteorder::{LittleEndian, ReadBytesExt, WriteBytesExt};
 use std::collections::HashSet;
 use std::{
     io::{Read, Seek, SeekFrom, Write},
-    sync::{Arc, RwLock},
+    sync::Arc
 };
 
 impl CustomSerialize for Neighbour {

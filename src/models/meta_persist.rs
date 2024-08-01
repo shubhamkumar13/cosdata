@@ -1,8 +1,8 @@
 use crate::models::common::*;
 use crate::models::types::*;
 use crate::models::versioning::*;
-use lmdb::{Database, DatabaseFlags, Environment, Error as LmdbError, Transaction, WriteFlags};
-use std::sync::{Arc, Mutex, OnceLock, RwLock};
+use lmdb::{Transaction, WriteFlags};
+use std::sync::Arc;
 
 pub fn store_current_version(
     vec_store: Arc<VectorStore>,

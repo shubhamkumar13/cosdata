@@ -6,21 +6,11 @@ use crate::models::file_persist::*;
 use crate::models::meta_persist::*;
 use crate::models::types::*;
 use crate::storage::Storage;
-use bincode;
-use dashmap::DashMap;
-use futures::stream::Collect;
-use serde::{Deserialize, Serialize};
-use sha2::{Digest, Sha256};
 use smallvec::SmallVec;
-use std::borrow::BorrowMut;
-use std::collections::hash_map::DefaultHasher;
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 use std::fs::File;
-use std::hash::{Hash, Hasher};
-use std::io::{Seek, SeekFrom, Write};
-use std::ops::Deref;
 use std::sync::RwLock;
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 
 pub fn ann_search(
     vec_store: Arc<VectorStore>,

@@ -1,5 +1,4 @@
 use serde::{Deserialize, Serialize};
-use std::sync::{Arc, Mutex};
 
 #[derive(Debug, Serialize, Deserialize, PartialEq, Eq, Hash)]
 pub struct AuthResp {

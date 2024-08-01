@@ -1,4 +1,3 @@
-use bincode::{deserialize, serialize};
 use bs58;
 use serde::{Deserialize, Serialize};
 use siphasher::sip::SipHasher24;

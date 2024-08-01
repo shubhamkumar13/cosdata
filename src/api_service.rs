@@ -1,26 +1,22 @@
-use crate::models::chunked_list::LazyItem;
 use crate::models::chunked_list::*;
 use crate::models::custom_buffered_writer::CustomBufferedWriter;
 use crate::models::file_persist::*;
 use crate::models::meta_persist::*;
 use crate::models::rpc::VectorIdValue;
 use crate::models::types::*;
-use crate::models::user::{AuthResp, Statistics};
-use crate::models::{self, common::*};
-use crate::quantization::scalar::ScalarQuantization;
+use crate::models::user::Statistics;
+use crate::models::common::*;
 use crate::quantization::Quantization;
 use crate::quantization::StorageType;
-use crate::storage::Storage;
-use crate::vector_store::{self, *};
-use dashmap::DashMap;
+use crate::vector_store::*;
 use futures::stream::{self, StreamExt};
-use lmdb::{Database, DatabaseFlags, Environment, Error as LmdbError, Transaction, WriteFlags};
+use lmdb::DatabaseFlags;
 use rand::Rng;
 use std::cell::RefCell;
 use std::fs::OpenOptions;
 use std::io::Write;
 use std::rc::Rc;
-use std::sync::{Arc, Mutex, RwLock};
+use std::sync::{Arc, RwLock};
 
 pub async fn init_vector_store(
     name: String,
